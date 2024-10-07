@@ -1,29 +1,4 @@
-% Region Based Active Contour Segmentation
-%
-% seg = region_seg(I,init_mask,max_its,alpha,display)
-%
-% Inputs: I           2D image
-%         init_mask   Initialization (1 = foreground, 0 = bg)
-%         max_its     Number of iterations to run segmentation for
-%         alpha       (optional) Weight of smoothing term
-%                       higer = smoother.  default = 0.2
-%         display     (optional) displays intermediate outputs
-%                       default = true
-%
-% Outputs: seg        Final segmentation mask (1=fg, 0=bg)
-%
-% Description: This code implements the paper: "Active Contours Without
-% Edges" By Chan Vese. This is a nice way to segment images whose
-% foregrounds and backgrounds are statistically different and homogeneous.
-%
-% Example:
-% img = imread('tire.tif');
-% m = zeros(size(img));
-% m(33:33+117,44:44+128) = 1;
-% seg = region_seg(img,m,500);
-%
-% Coded by: Shawn Lankton (www.shawnlankton.com)
-%------------------------------------------------------------------------
+
 function [seg,seg1] = region_seg(I,phi3,phi4,max_its,alpha,display)
   
   %-- default value for parameter alpha is .1
